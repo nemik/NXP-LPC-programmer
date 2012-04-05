@@ -1,0 +1,7 @@
+I was using the mbed team's excellent http://mbed.org/users/chris/notebook/prototype-to-hardware/ tutorial on programming NXP chips in a custom board (also using NXP LPC1768) but my mbed stopped working. I needed to do this quick and decided to port the mbed ISP programmer code to an AVR-based Teensy (http://www.pjrc.com/teensy/) that I had laying around. I'm using the http://sourceforge.net/projects/lpc21isp/ ISP programming software on Linux.
+
+Before that, I tried doing the same thing on an Arduino UNO using its SoftSerial and NewSoftSerial libraries, none of which worked and only produced errors, as did the same code on the Teensy. What saved the day was using Teensy's hardware UART which worked beautifully at the 19200 baud I tried.
+
+The Teensy is also cheaper than a dedicated mbed for ISP programming. I want to later combine this code with the serial pass-through one to use a button or something to switch between ISP programmer mode (which causes resets and pulling ISP pin) and serial-passthrough for debugging the LPC on the custom board.
+
+I hope someone else finds this useful if they're ever in a similar pinch.
